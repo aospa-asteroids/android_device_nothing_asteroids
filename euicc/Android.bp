@@ -3,42 +3,15 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-android_app {
+phony {
     name: "AsteroidsEuicc",
-
-    srcs: ["src/**/*.kt"],
-
-    sdk_version: "current",
-    product_specific: true,
-    certificate: "platform",
-    privileged: true,
-
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
     required: [
-        "co.aospa.euicc.xml",
-        "hidden-api-whitelist-co.aospa.euicc.xml",
+        "EuiccPolicy",
+        "EuiccPolicyAsteroids",
     ],
 }
 
-prebuilt_etc {
-    name: "co.aospa.euicc.xml",
-    src: "co.aospa.euicc.xml",
-    sub_dir: "permissions",
-    product_specific: true,
-}
-
-prebuilt_etc {
-    name: "hidden-api-whitelist-co.aospa.euicc.xml",
-    src: "hidden-api-whitelist-co.aospa.euicc.xml",
-    sub_dir: "sysconfig",
-    product_specific: true,
-}
-
-prebuilt_etc {
-    name: "default-permissions-com.google.android.euicc.xml",
-    src: "default-permissions-com.google.android.euicc.xml",
-    sub_dir: "default-permissions",
+runtime_resource_overlay {
+    name: "EuiccPolicyAsteroids",
     product_specific: true,
 }
