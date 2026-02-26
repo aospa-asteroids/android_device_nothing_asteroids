@@ -166,6 +166,8 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
+include hardware/nothing/sepolicy/nt-sepolicy.mk
+
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
