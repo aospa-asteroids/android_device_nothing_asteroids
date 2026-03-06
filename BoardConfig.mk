@@ -128,7 +128,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7635
-TARGET_KERNEL_CONFIG := \
+KERNEL_DEFCONFIG := \
     gki_defconfig \
     vendor/pineapple_perf.config \
     vendor/asteroids_perf.config
@@ -173,10 +173,6 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/bt-kernel
 
 # Partitions
-ifneq ($(PRODUCT_RO_FILE_SYSTEM), erofs)
--include vendor/lineage/config/BoardConfigReservedSize.mk
-endif
-
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9659482112 # BOARD_SUPER_PARTITION_SIZE - 4MiB
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
@@ -201,10 +197,6 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := volcano
-
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
@@ -216,16 +208,10 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VINTF
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/vintf/framework_matrix_nothing.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/vintf/framework_manifest.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 ODM_MANIFEST_FILES += $(DEVICE_PATH)/vintf/manifest_asteroids.xml
 ODM_MANIFEST_SKUS := JPN

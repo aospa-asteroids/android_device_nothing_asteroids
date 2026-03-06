@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/nothing/asteroids/asteroids-vendor.mk)
 
 # A/B
@@ -54,8 +53,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.opengles.version=196610
 
 # Audio
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
-AUDIO_PAL_DIR := hardware/qcom-caf/sm8650/audio/pal
+AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
+AUDIO_PAL_DIR := vendor/qcom/opensource/pal
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -400,7 +399,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Kernel
- PRODUCT_COPY_FILES += \
+TARGET_USES_KERNEL_PLATFORM := false
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
 
 # Keylayout
@@ -543,6 +544,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nothing.xml \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := volcano
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
@@ -625,7 +630,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    kernel/nothing/sm7635
+    kernel/nothing/sm7635 \
+    kernel/nothing/sm7635-modules
 
 # Storage
 PRODUCT_CHARACTERISTICS := nosdcard
