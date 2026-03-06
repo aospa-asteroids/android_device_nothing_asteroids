@@ -1,22 +1,21 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * SPDX-FileCopyrightText: 2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.settings.doze
+package co.aospa.euicc
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 
-class BootCompletedReceiver : BroadcastReceiver() {
+class EuiccReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        Log.d(TAG, "Starting")
-        Utils.checkDozeService(context)
+        Log.d(TAG, "Received PARTNER_CUSTOMIZATION intent")
     }
 
     companion object {
-        private const val TAG = "NothingDoze"
+        private const val TAG = "AsteroidsEuiccReceiver"
     }
 }
