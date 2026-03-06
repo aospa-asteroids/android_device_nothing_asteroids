@@ -4,10 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.aperture.dev.overlay.asteroids">
+    package="co.aospa.aperture.dev.overlay.asteroids">
 
     <overlay
         android:isStatic="true"
         android:priority="750"
-        android:targetPackage="org.lineageos.aperture.dev" />
+        android:targetPackage="co.aospa.aperture.dev" />
 </manifest>
