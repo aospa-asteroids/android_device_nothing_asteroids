@@ -17,21 +17,21 @@ android_app {
         proguard_flags_files: ["proguard.flags"],
     },
     required: [
-        "org.lineageos.euicc.xml",
-        "hidden-api-whitelist-org.lineageos.euicc.xml",
+        "co.aospa.euicc.xml",
+        "hidden-api-whitelist-co.aospa.euicc.xml",
     ],
 }
 
 prebuilt_etc {
-    name: "org.lineageos.euicc.xml",
-    src: "org.lineageos.euicc.xml",
+    name: "co.aospa.euicc.xml",
+    src: "co.aospa.euicc.xml",
     sub_dir: "permissions",
     product_specific: true,
 }
 
 prebuilt_etc {
-    name: "hidden-api-whitelist-org.lineageos.euicc.xml",
-    src: "hidden-api-whitelist-org.lineageos.euicc.xml",
+    name: "hidden-api-whitelist-co.aospa.euicc.xml",
+    src: "hidden-api-whitelist-co.aospa.euicc.xml",
     sub_dir: "sysconfig",
     product_specific: true,
 }
