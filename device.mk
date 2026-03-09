@@ -162,6 +162,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
     vendor.hw.fm.init=0
 
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Boot Control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
