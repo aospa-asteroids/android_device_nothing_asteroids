@@ -128,7 +128,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7635
-KERNEL_DEFCONFIG := \
+TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/pineapple_perf.config \
     vendor/asteroids_perf.config
