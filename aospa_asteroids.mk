@@ -9,6 +9,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/nothing/asteroids/device.mk)
 $(call inherit-product, vendor/aospa/target/product/aospa-target.mk)
 
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_BRAND := Nothing
 PRODUCT_DEVICE := asteroids
 PRODUCT_MANUFACTURER := Nothing
