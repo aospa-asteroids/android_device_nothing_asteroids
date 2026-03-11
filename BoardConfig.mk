@@ -109,6 +109,7 @@ TARGET_USES_VULKAN := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
+    androidboot.selinux=permissive \
     firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image \
     log_buf_len=1M \
     nosoftlockup \
