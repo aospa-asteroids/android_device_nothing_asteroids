@@ -379,7 +379,7 @@ PRODUCT_PACKAGES += \
     ueventd.asteroids.rc
 
 # Kernel
-TARGET_USES_KERNEL_PLATFORM := false
+KERNEL_PREBUILT_DIR := $(DEVICE_PATH)-kernel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/system_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
