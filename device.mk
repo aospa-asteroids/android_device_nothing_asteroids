@@ -39,8 +39,8 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 PRODUCT_ENABLE_UFFD_GC := true
 
 # Audio
-AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
-AUDIO_PAL_DIR := vendor/qcom/opensource/pal
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
+AUDIO_PAL_DIR := hardware/qcom-caf/sm8650/audio/pal
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -515,10 +515,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nothing.xml \
     $(LOCAL_PATH)/configs/sysconfig_wfc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/sysconfig_wfc.xml
 
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := volcano
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
@@ -608,6 +604,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/qcom-caf/sm8650 \
     kernel/nothing/sm7635
 
 # Storage

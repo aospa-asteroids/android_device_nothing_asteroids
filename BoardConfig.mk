@@ -129,7 +129,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7635
-KERNEL_DEFCONFIG := \
+TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/pineapple_perf.config \
     vendor/asteroids_perf.config
@@ -197,6 +197,10 @@ BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := $(PRODUCT_RO_FILE_SYSTEM)
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := volcano
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
